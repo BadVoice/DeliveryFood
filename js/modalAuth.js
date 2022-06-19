@@ -17,6 +17,14 @@ const modal = () => {
         userName.textContent = user.login
         modalAuth.style.display = 'none';
 
+        if (user.login === "") {
+            alert('введите логин')
+            userName.textContent = ""
+            btnAuth.style.display = 'flex';
+            btnOut.style.display = 'none';
+            modalAuth.style.display = 'flex';
+        }
+
     }
 
     const logout = () => {
