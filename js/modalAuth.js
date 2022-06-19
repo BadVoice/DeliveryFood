@@ -7,6 +7,7 @@ const modal = () => {
     const inputPassword = document.getElementById('password')
     const btnOut = document.querySelector('.button-out')
     const userName = document.querySelector('.user-name')
+    const btnCar = document.getElementById('cart-button')
 
     const login = (user) => {
         btnAuth.style.display = 'none';
@@ -32,9 +33,7 @@ const modal = () => {
 
         btnOut.style.display = 'none';
         userName.style.display = 'none';
-
         userName.textContent = ''
-        localStorage.removeItem('user')
     }
 
     btnAuth.addEventListener('click', (event) => {
@@ -42,8 +41,7 @@ const modal = () => {
         modalAuth.style.display = 'flex';
     })
 
-    btnOut.addEventListener('click', (event) => {
-        event.preventDefault()
+    btnOut.addEventListener('click', () => {
         logout()
     })
 
@@ -69,11 +67,5 @@ const modal = () => {
     if (localStorage.getItem('user')) {
         login(JSON.parse(localStorage.getItem('user')))
     }
-
-
-
-
-
-
 }
 modal()
