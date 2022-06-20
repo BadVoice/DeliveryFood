@@ -13,28 +13,25 @@ const modal = () => {
         btnAuth.style.display = 'none';
 
         btnOut.style.display = 'flex';
-        userName.style.display = 'flex';
 
-        userName.textContent = user.login
+
+
         modalAuth.style.display = 'none';
 
         if (user.login === "") {
             alert('введите логин')
-            userName.textContent = ""
+
             btnAuth.style.display = 'flex';
             btnOut.style.display = 'none';
             modalAuth.style.display = 'flex';
-            localStorage.removeItem("user");
         }
 
     }
 
     const logout = () => {
         btnAuth.style.display = 'flex';
-        localStorage.clear();
         btnOut.style.display = 'none';
-        userName.style.display = 'none';
-        userName.textContent = ''
+
     }
 
     btnAuth.addEventListener('click', (event) => {
