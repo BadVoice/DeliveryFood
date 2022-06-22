@@ -1,5 +1,6 @@
     const partners = () => {
         const cardsRest = document.querySelector('.cards-restaurants')
+        const sectionHead = document.querySelector('.section-heading')
 
 
         const renderItems = (data) => {
@@ -34,7 +35,23 @@
 
                 cardsRest.append(a)
 
+                const sectionHeading = document.createElement('div');
+                sectionHeading.classList.add('.section-heading')
+                sectionHeading.innerHTML = `
+                
+                <div class="section-heading">
+                <h2 class="section-title restaurant-title">${name}</h2>
+                <div class="card-info">
+                    <div class="rating">
+                    ${stars}
+                    </div>
+                    <div class="price">От ${price} ₽</div>
+                    <div class="category">${kitchen}</div>
+                </div>
+                <!-- /.card-info -->
+            </div>
 
+`
             });
 
         }
