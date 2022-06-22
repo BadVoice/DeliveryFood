@@ -2,14 +2,13 @@ const menu = () => {
     const restourant = 'food-band.json'
     const cardMenu = document.querySelector('.cards-menu')
 
+
     const renderItems = (data) => {
         data.forEach(({ id, name, description, price, image }) => {
 
             const cards = document.createElement('div')
 
             cards.classList.add('card')
-
-
 
             cards.innerHTML = `
                 <div class="card">
@@ -36,6 +35,8 @@ const menu = () => {
             </div>
 
             `
+
+
             cardMenu.append(cards)
         });
 

@@ -6,6 +6,11 @@ const cart = () => {
     const counter = document.querySelector('.counter')
     const foodRow = document.querySelectorAll('.food-row')
     const counterBtnMinus = document.querySelector('.counter-button-minus')
+    const btnAddCart = document.querySelector('.button-add-cart')
+    const modalBody = document.querySelector('.modal-body')
+
+
+
 
 
     cartBtn.addEventListener('click', (e) => {
@@ -40,6 +45,10 @@ const cart = () => {
         })
 
     });
+
+
+
+
 
 }
 cart()
