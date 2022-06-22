@@ -9,6 +9,7 @@ const modal = () => {
     const userName = document.querySelector('.user-name')
     const btnCar = document.getElementById('cart-button')
 
+
     const login = (user) => {
         btnAuth.style.display = 'none';
 
