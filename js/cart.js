@@ -12,15 +12,15 @@ const cart = () => {
 
 
 
-
     cartBtn.addEventListener('click', (e) => {
         e.preventDefault()
-        modalCart.style.display = "flex";
+        modalCart.classList.add('is-open')
 
     })
     modalCartClose.addEventListener('click', (e) => {
-        modalCart.style.display = "none";
+        modalCart.classList.remove('is-open')
     })
+
 
     foodRow.forEach(element => {
         counterBtn.addEventListener('click', () => {

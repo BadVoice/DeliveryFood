@@ -10,17 +10,6 @@ const modal = () => {
     const btnCar = document.getElementById('cart-button')
 
 
-
-
-
-
-
-
-
-
-
-
-
     const login = (user) => {
         btnAuth.style.display = 'none';
 

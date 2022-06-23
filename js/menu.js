@@ -1,17 +1,22 @@
 const menu = () => {
-    const restourant = 'food-band.json'
+    const restourant = 'https://testdelivery-d0ff4-default-rtdb.firebaseio.com/db/food-band.json'
     const cardMenu = document.querySelector('.cards-menu')
+
+
+    const addToCart = (cartItem) => {
+        console.log(cartItem)
+    }
+
 
     const renderItems = (data) => {
 
+            data.forEach(({ id, name, description, price, image }) => {
 
-        data.forEach(({ id, name, description, price, image }) => {
+                const cards = document.createElement('div')
 
-            const cards = document.createElement('div')
+                cards.classList.add('card')
 
-            cards.classList.add('card')
-
-            cards.innerHTML = `
+                cards.innerHTML = `
                 <div class="card">
                 <img src="${image}" alt="${id}" class="card-image" />
                 <div class="card-text">
@@ -37,14 +42,18 @@ const menu = () => {
 
             `
 
+                cards.querySelector('.button-card-text').addEventListener('click', () => {
+                    addToCart({ name, price, count: 1 })
+                })
 
-            cardMenu.append(cards)
-        });
 
-        // cardMenu.append(cards)
-    }
+                cardMenu.append(cards)
+            });
 
-    fetch('https://testdelivery-d0ff4-default-rtdb.firebaseio.com/db/food-band.json')
+            // cardMenu.append(cards)
+        } // fetch()
+
+    fetch(`./db/${restourant.products}`)
         .then((response) => response.json())
         .then((data) => {
             renderItems(data)

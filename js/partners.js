@@ -32,6 +32,17 @@
                         </div>                   
                     </a>
                 `
+                a.addEventListener('click', (e) => {
+                    e.preventDefault()
+
+                    if (localStorage.getItem('user')) {
+                        localStorage.setItem('restaurant', JSON.stringify(data))
+                        window.location.href = '/restaurant.html'
+                    } else {
+                        const modalAuth = document.querySelector('.modal-auth')
+                        modalAuth.style.display = 'flex'
+                    }
+                })
 
                 cardsRest.append(a)
 
